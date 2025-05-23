@@ -160,16 +160,13 @@ for(let i = 0; i < sayilar.length; i++){
     }
   }
   object.tekrarSayilari.push(tekrarSayisi);
-
-  metin = `${object.tekrarEdenler[i]} sayısı ${object.tekrarSayilari[i]} kere tekrar edilmiştir`;
   
   if(object.tekrarSayilari[i] > 1){
     tekraredensayilar.push(metin);
+    metin = `${sayilar[i]} sayısı ${tekrarSayisi} kere tekrar edilmiştir`;
   }
 }
 
-console.log(object.tekrarEdenler);
-console.log(object.tekrarSayilari);
 console.log(tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
