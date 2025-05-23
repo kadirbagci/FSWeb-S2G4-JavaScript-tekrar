@@ -40,6 +40,7 @@ function KareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
 }
 
+console.log(KareninAlani(10));
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* GÖREV 1:  
@@ -50,10 +51,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2 * pi * yaricap
 }
 
+console.log(CemberinCevresi(5));
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 2:  
@@ -64,10 +66,11 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+  return pi * Math.pow(yaricap, 2)
 }
 
+console.log(CemberinAlani(15));
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 3:
@@ -90,8 +93,8 @@ function CemberinAlani(/* kodlar buraya */) {
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
 let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
+  enkucuk = sayilar[0],
+  enbuyuk = sayilar[0],
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
   siralisayilar,
@@ -99,8 +102,17 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+for(let i = 1; i < sayilar.length; i++){
+  if(enbuyuk < sayilar[i]){
+    enbuyuk = sayilar[i]
+  }
+  if(enkucuk > sayilar[i]){
+    enkucuk = sayilar[i]
+  }
+}
 
+console.log(enbuyuk);
+console.log(enkucuk);
 // 3b çözümü:
 
 /* kodlar buraya */
