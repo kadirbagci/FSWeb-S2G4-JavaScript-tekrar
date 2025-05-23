@@ -90,15 +90,16 @@ console.log(CemberinAlani(15));
 		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
 */
 
+console.log(sayilar.length);
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
+let ucetambolunenler = [],
   enkucuk = sayilar[0],
   enbuyuk = sayilar[0],
   ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
+  besyuzdenkucuksayilar = [],
+  siralisayilar = [],
+  tekraredensayilar = [];
 
 // 3a çözümü
 
@@ -115,24 +116,61 @@ console.log(enbuyuk);
 console.log(enkucuk);
 // 3b çözümü:
 
-/* kodlar buraya */
+sayilar.forEach((sayi) => {
+  if(sayi % 3 === 0){
+    ucetambolunenler.push(sayi)
+  }
+})
 
+console.log(ucetambolunenler);
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, deger) => toplam + deger, 0);
 
+console.log(ucebolunenlerintoplami);
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
+console.log(besyuzdenkucuksayilar);
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
+console.log(siralisayilar);
 // 3f çözümü
 
-/* kodlar buraya */
+const object = {
+  tekrarEdenler: [],
+  tekrarSayilari: []
+}
+let tekrarSayisi;
+let metin;
 
+for(let i = 0; i < sayilar.length; i++){
+  tekrarSayisi = 1;
+
+  if(!object.tekrarEdenler.includes(sayilar[i])){
+    object.tekrarEdenler.push(sayilar[i]);
+
+    for(let k = i + 1; k < sayilar.length; k++){
+      if(sayilar[i] === sayilar[k]){
+        tekrarSayisi++;
+      }
+    }
+  }
+  object.tekrarSayilari.push(tekrarSayisi);
+
+  metin = `${object.tekrarEdenler[i]} sayısı ${object.tekrarSayilari[i]} kere tekrar edilmiştir`;
+  
+  if(object.tekrarSayilari[i] > 1){
+    tekraredensayilar.push(metin);
+  }
+}
+
+console.log(object.tekrarEdenler);
+console.log(object.tekrarSayilari);
+console.log(tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
